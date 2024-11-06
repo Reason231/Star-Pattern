@@ -3,26 +3,27 @@
 //   *   *    2 spaces 1 star 2 spaces 1 star
 //  * * * *   1 spaces 4 star
 
-function hollowTriangle() {
-    for (let i = 1; i <= 4; i++) {
-        let outerSpaces = 4 - i;
-        let stars = " ".repeat(outerSpaces);
 
-        if (i === 1) {
-            stars += "*";
-        } else if (i === 2) {
-            stars += "*" + " ".repeat(1) + "*";
-        } else if (i === 3) {
-            stars += "*" + " ".repeat(3) + "*";
-        } else if (i === 4) {
-            stars += "* ".repeat(4).trim(); // Four stars with a space in between
+function hollowTriangle(height){
+    for (let i = 1; i <=height; i++) {
+        // It is for the outerSpaces
+        let outerSpaces=height-i
+        // First it logs the outerSpaces and the first row
+        let stars=" ".repeat(outerSpaces)+"*"
+        
+        // Then it adds the stars after the spaces
+        if(i>1 && i < height){
+            stars+=" ".repeat(2*i-3)+"*"
         }
 
-        console.log(stars);
+        // It prints the last one
+        else if(i===height){
+            stars="* ".repeat(height).trim()
+        }
+        console.log(stars)
     }
 }
-
-hollowTriangle();
+hollowTriangle(5);
 
 
 

@@ -5,20 +5,14 @@
   //  * * * * * 0 spaces 5 star
 
 
-
 function rightTraingle(n){
-  let spaces=5
-
-  // It creates the rows with the spaces
+  let star;
+  let spaces;
   for (let i = 1; i <=n; i++) {
-    let rows=" ".repeat(spaces-1)  // It creates the spaces with the help of repeat()
-    spaces--
-
-    for (let j = 1; j <=i; j++) {
-      rows+="*"
-    }
-    console.log(rows)
+    star="*".repeat(i)
+    spaces=" ".repeat(n-i)+star
+    console.log(spaces)
   }
-  rows=""
 }
 rightTraingle(5)
+

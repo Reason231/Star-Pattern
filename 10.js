@@ -27,14 +27,18 @@
    hollowSquare()
 
    // 2nd Method
-   function hollowSquare(size) {
+   function hollowSquare(size = 5) {
+      const fullRow = "*".repeat(size); // Full row for top and bottom
+      const hollowRow = "*" + " ".repeat(size - 2) + "*"; // Hollow row with spaces in between
+  
       for (let i = 1; i <= size; i++) {
-         if (i === 1 || i === size) {
-            console.log("*".repeat(size));
-         } else {
-            console.log("*" + " ".repeat(size - 2) + "*");
-         }
+          if (i === 1 || i === size) {
+              console.log(fullRow); // Print full row for first and last rows
+          } else {
+              console.log(hollowRow); // Print hollow row for middle rows
+          }
       }
-   }
-   
-   hollowSquare(5);
+  }
+  
+  hollowSquare();
+  

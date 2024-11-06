@@ -1,20 +1,16 @@
-// * * * * * 0 spaces 5 stars
-//   * * * * 1 spaces  4 stars
-//     * * * 2 spaces 3 stars
-//       * * 3 spaces 2 stars
-//         * 4 spaces 1 star
+// * * * * * 1 row 1 spaces 5 stars
+//   * * * * 2 row 2 spaces 4 stars
+//     * * * 3 row 3 spaces 3 stars
+//       * * 4 row 4 spaces 2 stars
+//         * 5 row 5 spaces 1 star
 
-function inverseRightTriangle(stars){
-  let spaces=0
-
-  for (let i = 1; i <=stars; i++) {
-    let rows=" ".repeat(spaces)
-    spaces++
-    for (let j = 5; j >=i; j--) {
-      rows+="*"
-    }
-    console.log(rows)
+function inverseRight(n){
+  let stars
+  for (let i = 1; i <=5; i++) {
+    spaces=" ".repeat(i)
+    stars=spaces+"*".repeat(n-i)
+    console.log(stars)
   }
-  rows=""
+
 }
-inverseRightTriangle(5)
+inverseRight(6)
